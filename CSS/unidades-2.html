@@ -1,0 +1,104 @@
+<!--
+
+    Distancias absolutas <length>
+    São fixas e não alteram o seu valor.
+    
+    
+    | Unidade | Nome               |Equivalência          |
+    |---------|--------------------|----------------------|
+    | cm      | Centímetros        | 1 cm = 96px/2.54     |
+    | in      | Inches (polagadas) | 1 in = 2.54cm = 96px | 
+    | pix     | Pixels             | 1 px = 1/96th of 1in |
+
+
+    *O mais comum e mais utilizado e o px
+    *Não é recomendado usar cm
+
+    Distâncias relativas
+
+    São relativas a um outro valor, pode ser o elemento pai, ou root, ou o tamanho da tela.
+    Benefício: Maior adaptação aos diferentes tipos de tela.
+
+    | Unidade | Relativo a                                    |
+    |---------|-----------------------------------------------|
+    | em      | Tamanho da font do elemento pai               |
+    | rem     | Tammanho da font do elemento raiz (root/html) |
+    | vw      | 1% da viewport width                          |
+    | vh      | 1% da viewport height                         |
+
+    :root {
+        font-size: 18px;
+    }
+
+    /* OU */
+
+    html {
+        font-size: 18px;
+    }
+
+    Documentação: https://www.w3.org/Style/Examples/007/units.pt_BR.html
+    Documentação MDN: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+
+    Dica do professor 1:
+
+    Quando trabalhamos com designs responsivos, ou seja, layouts flexiveis que se adaptam para qualquer tipo de tela, é interessante utilizar a unidade rem.
+
+    User agent (Browser), boa parte deles, usam o font-sixe:16px
+
+    Como converter px para rem
+    valor em px / valor da font do user agent
+    
+    Ex: 32px / 16px = 2rem
+
+    Dica do Professor 2:
+
+    Outra possibilidade é mudar a configuração do user agent de 16px para 10px. usando % e utilizando a regra de 3 da matematica, desta forma conseguimos cravar a unidade em rem.
+
+    Transformar o user agent de 16px para 10px em %
+
+    User agent 16px = 100%
+
+    10*100 = 1000
+    1000/16 = 62,6%
+
+
+    :root {
+        font-size: 62.5%
+    }
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade de medida</title>
+</head>
+<style>
+    :root {
+        font-size: 62.5%;
+    }
+
+    h2 {
+        font-size:2.4rem;
+        margin-bottom: 6.4rem;
+    }
+    p {
+        margin-top: 3.2rem;
+        font-size: 1.6rem;
+    }
+</style>
+<body>
+    <main>
+        <section>
+            <article>
+                <div class="card">
+                    <h2>Artigo unidades</h2>
+                    <p class="text-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident molestiae sunt, aperiam impedit eius ducimus qui animi minus nihil, recusandae laudantium explicabo labore odit ea suscipit? Natus, dolores saepe.</p>
+                </div>         
+            </article>
+        </section>
+    </main>
+</body>
+</html>

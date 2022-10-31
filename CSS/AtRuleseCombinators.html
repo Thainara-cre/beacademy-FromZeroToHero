@@ -1,0 +1,80 @@
+<!--
+    ** Combinadores (Combinators) **
+
+    Combinadores são utilizados para buscar e combinar seletores a fin de aplicar uma estilização
+
+    Tipos: 
+
+    **Descendent combinator**
+
+    Identificado por um espaço entre seletores.
+     - busca um elemento dentro do outro
+
+     body ul li
+
+     **Child Combinator**
+
+     Identificado pelo sinal > entre dois seletores
+     - Seleciona somente o elemento filho direto do pai
+     - Elementos depois do filho direto serão considerado
+
+     ** Adjacent sibling combinator **
+     Identificado eplo sinal de + entre dois Seletores
+     - Busca sommente o elemento do direito que é irmão direto da hierarquia
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style-AtRuleseCombinators.css">
+    <title>At Rules e Combinators</title>
+</head>
+<style>
+    /*body ul li {
+        background: green;
+        color: red;
+    }
+
+    body section div ul li {
+        background: blue;
+        color: yellow;
+    }
+    body > ul {
+        background-color: red;
+    }
+    div > ul {
+        background-color: yellow;
+    }*/
+
+    h1 + p {
+        color: aliceblue;
+    }
+    h1 ~ p {
+        background-color: red;
+    }
+
+</style>
+<body>
+    <!--<div>
+        <p>Teste</p>
+    </div>
+    <ul>
+        <li>Testando combinadores</li>
+    </ul>
+    <div>Outro formato</div>
+    <section>
+        <div>
+            <ul>
+                <li>Outro marcador</li>
+            </ul>
+        </div>
+    </section>-->
+    <h1>Titulo</h1>
+    <p>Mais um paragrafo</p>
+    <button>Enviar</button>
+    <p>Outro paragrafo</p>
+</body>
+</html>

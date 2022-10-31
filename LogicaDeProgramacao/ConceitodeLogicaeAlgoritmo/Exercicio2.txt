@@ -1,0 +1,27 @@
+* Encoste o carro;
+
+* Pegue um triângulo;
+
+* Coloque o triângulo na rodovia;
+
+* Pegue um macaco;
+
+* Coloque o macaco embaixo carro;
+
+* Encontre o estepe do carro;
+
+* Pegue o estepe;
+
+* Pague a chave de roda;
+
+* Remova o pneu furado com a ajuda da chave de roda;
+
+* Pegue o pneu estepe;
+
+* Coloque o estepe no lugar do pneu furado;
+
+* Parafuze o estepe com a ajuda da chave de roda;
+
+* Remova o macaco;
+
+* Guarde o macaco, o estepe e o pneu furado;

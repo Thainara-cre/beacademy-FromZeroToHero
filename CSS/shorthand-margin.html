@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shothand and Margin</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        /*font-size: 48px;
+        font-weight: bold;
+        font-style: italic;*/
+        font: italic 100 32px 'Arial',sans-serif;/* Shorthand */
+    }
+    .box {
+        background-color: red;
+        /*Margin Shorthand*/
+        margin: 2px 8px;
+            /* top/bottom right/left*/
+    }
+    .box2 {
+        background-color: green;
+        /*Margin Shorthand*/
+        margin:12px 80px 4px;
+            /* top right/left bottom*/
+    }
+    .box3 {
+        background-color: blue;
+        margin:8px 4px 12px 42px;
+            /* top right left bottom*/
+    }
+</style>
+<body>
+    <!-- Shorthand
+        Recurso para agrupar Propriedades, sendo assim sua escrita a sua escrita ficara mais curta
+    -->
+    <div class="box">
+        <h1>
+            Titulo1
+        </h1>
+    </div>
+
+    <div class="box2">
+        <h1>
+            Titulo2
+        </h1>
+    </div>
+
+    <div class="box3">
+        <h1>
+            Titulo3
+        </h1>
+    </div>
+    
+</body>
+</html>

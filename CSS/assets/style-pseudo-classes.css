@@ -1,0 +1,8 @@
+ul li {
+    color:blue;
+    font-size: 2.3rem;
+}
+
+ul p:first-child {
+    color: red;
+}

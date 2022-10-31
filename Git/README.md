@@ -1,0 +1,1 @@
+# Conhecendo o Git e Github, ajustes na configuração
