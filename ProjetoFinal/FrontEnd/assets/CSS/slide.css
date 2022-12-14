@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root {
+    --rosa: #f4a6fe;
+    --branco: #ffffff;
+}
+
+.container-slide .slide-container .slide{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 9%;
+    padding-bottom: 70px;
+    font-family: 'Noto Sans', sans-serif;
+ 
+}
+
+
+.container-slide .slide-container .slide .content-slide{
+    flex: 1 1 350px;
+    animation: slideContent .4s linear .4s backwards;
+}
+
+@keyframes slideContent {0%
+{
+    opacity: 0;
+    transform: translateX(-50px);
+}
+}
+
+.container-slide .slide-container .slide .content-slide h3{
+    font-size: 35px;
+    color: var(--rosa);
+}
+
+.container-slide .slide-container .slide .content-slide p{
+    font-size: 16px;
+    color: var(--white);
+    width: 40%;
+    height: 10%;
+}
+
+.container-slide .slide-container .slide .content-slide .btn-slide {
+    margin-top: 10px;
+    display: inline-block;
+    background: #8932c3;
+    color: var(--white);
+    font-size: 17px;
+    padding: 9px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid #8932c3;
+}
+
+.container-slide .slide-container .slide .content-slide .btn-slide:hover {
+    background: #a355d7;
+    border: 2px solid #a355d7;
+    transition: all 0.3s;
+}
+
+.container-slide .slide-container {
+    display: none;
+}
+
+.container-slide .slide-container.active {
+    display: block;
+}
+
+.container-slide .slide-container:nth-child(1) .slide {
+    background-image: url(../imagens/chocolate-day.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-slide .slide-container:nth-child(2) .slide {
+    background-image: url(../imagens/front-view-of-delicious-chocolate-cake-concept.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-slide .slide-container:nth-child(3) .slide {
+    background-image: url(../imagens/front-view-of-sweet-chocolate-cake.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: round;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-slide .slide-container:nth-child(4) .slide {
+    background-image: url(../imagens/bolo-vulcao-de-chocolate.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-slide #prev, .container-slide #next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    background: #890873;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.container-slide #prev:hover,
+.container-slide #next:hover {
+    background: #ee7bd3;
+}
+
+.container-slide #prev {
+    left: 20px;
+}
+
+.container-slide #next {
+    right: 20px;
+}
+
+@media(max-width: 500px) {
+    .container-slide #prev {
+        top: 50%;
+        left: 0px;
+    }
+
+    .container-slide #next {
+        top: 50%;
+        right: 0px;
+    } 
+
+    .container-slide .slide-container .slide .content-slide{
+        font-size: 16px;
+        width: 70%;
+        height: 50vh;
+        padding-left:5%;
+    }
+}

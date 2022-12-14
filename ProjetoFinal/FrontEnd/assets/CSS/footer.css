@@ -1,0 +1,174 @@
+:root {
+    --roxo: rgb(194, 81, 228);
+    --rosa: rgb(244, 30, 187);
+}
+
+footer {
+    box-sizing: border-box;
+    color: #d9d9d9;
+}
+
+footer{
+    bottom: 0;
+    width: 100%;
+    background-color: #5434af;
+}
+
+footer .main-content {
+    display: flex;
+}
+
+footer .main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+footer .main-content .box h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer .main-content .box .content {
+    margin: 20px 0 0 0;
+    /*position: relative;*/
+}
+
+footer hr{
+    width: 100%;
+    border-color: var(--roxo);
+    color: var(--roxo);
+    margin: 0!important;
+    background: var(--roxo);
+}
+
+footer .main-content .left .content .social {
+    margin: 20px 0 0 0;
+}
+
+footer .main-content .left  .social a{
+    padding: 0 2px;
+}
+
+footer .main-content .left  .social a span{
+    width: 40px;
+    height: 40px;
+    background-color: var(--roxo);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+footer .main-content .left  .social a span:hover{
+    background: var(--rosa);
+}
+
+footer .main-content .left  .content p{
+    text-align: justify;
+}
+
+footer .center .content .fa {
+    font-size:32px;
+    background: var(--roxo);
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+footer .center .content .fa:hover{
+    background: var(--rosa);
+}
+
+footer .center .content .text{
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+footer .center .content .phone{
+    margin: 10px 0;
+}
+
+footer .content .msg {
+    margin-top: 10px;
+}
+
+footer .rigth form input, footer .rigth form textarea{
+    width: 100%;
+    font-size: 17px;
+    background: #7255c5;
+    padding-left: 10px;
+    border: 1px solid #6646bf;
+    color: #fff;
+}
+
+footer .rigth form input{
+    height: 35px;
+}
+
+
+footer .rigth form input:focus, footer .rigth form textarea:focus{
+    outline-color: rgb(233, 25, 226);
+}
+
+footer .rigth form text {
+    font-size: 17px;
+    margin-bottom: 2px;
+    color: #656565;
+}
+
+footer .rigth form .btn{
+    margin-top: 10px;
+}
+
+footer .rigth form .btn button {
+    height: 40px;
+    width: 100%;
+    background: var(--rosa);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #fff;
+}
+
+footer .rigth form .btn button:hover{
+    background: var(--roxo);
+}
+
+footer .bottom .center{
+    padding: 5px;
+    font-size: 15px;
+    background: #7255c5;
+    text-align: center;
+}
+
+footer .bottom .center span {
+    color: #fff;
+}
+
+footer .bottom .center a{
+    color: var(--rosa);
+    font-weight: bold;
+}
+
+footer .bottom .center a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    footer .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    footer .main-content .box{
+        margin: 5px 0;
+    }
+}

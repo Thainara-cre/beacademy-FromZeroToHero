@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+    --rosa: rgb(244, 30, 187);
+    --rosa-claro: rgb(245, 185, 229);
+    --roxo: rgb(198, 64, 238);
+}
+
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.card {
+    background-color: #ffffff90;
+    padding: 30px;
+    border-radius: 4%;
+    box-shadow: 3px 3px 1px 0px #00000060;
+}
+
+#h1Modal {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--rosa);
+}
+
+
+.label-float input {
+    width: 100%;
+    padding:5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid var(--rosa);
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    border-radius: 0;
+}
+
+.label-float {
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.label-float input:focus {
+    border-bottom: 2px solid var(--roxo);
+}
+
+.label-float label {
+    color: var(--rosa);
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label 
+{
+    font-size: 13px;
+    margin-top: 0;
+    color: var(--roxo);
+}
+
+.modal button {
+    background-color: transparent;
+    border-color: var(--rosa-claro);
+    color: var(--rosa);
+    padding: 7px;
+    font-weight: bold;
+    font-size: 12pt;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: all .4s ease-out;
+}
+
+.modal button:hover {
+    border-color: var(--rosa);
+    background-color: var(--rosa);
+    color: #ffffff;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.modal hr {
+    margin-top: 10%;
+    margin-bottom:10%;
+    width: 60%;
+    color: #fff;
+}
+
+.modal p {
+    color: var(--rosa);
+    font-size: 14pt;
+    text-align: center;
+}
+
+.modal a {
+    color: var(--roxo);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal a:hover {
+    color: var(--rosa);
+    transition: all .3s ease-out;
+}
+
+.modal .fa-eye {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    color: var(--rosa);
+}
+
+#msgError{
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+#msgSuccess{
+    text-align: center;
+    color: #00bb00;
+    background-color: #bbffbe;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bakery shop</title>   
+    <link rel="icon" type="image/x-icon" href="assets/imagens/logo-2.jpg">
+    <link rel="stylesheet" href="assets/CSS/index.css">
+    <link rel="stylesheet" href="assets/CSS/login.css">
+    <link rel="stylesheet" href="assets/CSS/slide.css">
+    <link rel="stylesheet" href="assets/CSS/footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/CSS/catalogo.css">
+    <link rel="stylesheet" href="assets/CSS/mais-vendidos.css">
+    <link rel="stylesheet" href="assets/CSS/pedido.css">
+</head>
+<body>
+    <header>
+      <nav class="menu">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fa fa-bars"></i>
+        </label>
+        <label for="" class="logo">Bakery</label>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#sobreNos">Sobre</a></li>
+          <li><a href="#favoritos">Favoritos</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#promocoes">Promoções</a></li>
+          <li><a href="#formPedido">Orçamento</a></li>
+          <li><a href="#feedbacks">feedbacks</a></li>
+          <li><a href="#footer">Contato</a></li>
+          <li><button onclick="showModalLogin()" id="btnLogar">Login</button>
+          </li>
+          <li><button onclick="sairLogin()" id="btnSair">Sair</button></li>
+        </ul>
+      </nav>
+      <div class="modal" id="modalLogin">
+        <div class="modal-content">
+          <span onclick="hideModalLogin()">&times;</span>
+              <h1 id="h1Modal">Entrar</h1>
+      
+              <div id="msgError" class="msgErrorLogin"></div>
+      
+              <div class="label-float">
+                <input type="text" id="usuarioLogin" placeholder="" required>
+                <label id="userLoginLabel" for="usuario">Usuário</label>
+              </div>
+              <div class="label-float">
+                <input type="password" id="senhaLogin" placeholder="" required>
+                <label id="senhaLoginLabel" for="usuario">Senha</label>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </div>
+              <div class="justify-center">
+                <button onclick="entrar()">Entrar</button>
+              </div>
+              <div class="justify-center">
+                <hr>
+              </div>
+              <p>
+                Não tem uma conta?
+                <a onclick="showModalCadastro()">
+                  Cadastre-se
+                </a>
+              </p>    
+        </div>
+      </div>
+      <div class="modal" id="modalCadastro">
+        <div class="modal-content">
+          <span onclick="hideModalCadastro()">&times;</span>
+              <h1 id="h1Modal">Cadastrar</h1>
+    
+              <div id='msgError' class="msgErrorCadastrar"></div>
+              <div id='msgSuccess' class="msgSuccessCadastrar"></div>
+              
+              <div class="label-float">
+                <input type="text" id="nomeCadastrar" placeholder="" required>
+                <label id="labelNomeCadastrar" for="nomeCadastrar">Nome</label>
+              </div>
+    
+              <div class="label-float">
+                <input type="text" id="usuarioCadastrar" placeholder="" required>
+                <label id="labelUsuarioCadastrar" for="usuarioCad">Usuário</label>
+              </div>
+      
+              <div class="label-float">
+                <input type="password" id="senhaCadastrar" placeholder="" required>
+                <label id="labelSenhaCadastrar" for="senha">Senha</label>
+                <i class="fa fa-eye" id="mostraSenhaCadastrar" aria-hidden="true"></i>
+              </div>
+    
+              <div class="label-float">
+                <input type="password" id="comfirmSenhaCadastrar" placeholder="" required>
+                <label id="labelComfirmSenhaCadastrar" for="comfirmSenha">Confirmar senha</label>
+                <i class="fa fa-eye" id="mostraComfirmSenhaCadastrar" aria-hidden="true"></i>
+              </div>
+      
+              <div class="justify-center">
+                <button onclick='cadastrar()'>Cadastrar</button>
+              </div>
+        </div>
+      </div>
+      <div class="modal" id="maisVendido">
+        <div class="modal_content">
+            <span id="bt_close">&times;</span>
+            <img src="assets/imagens/close-up-view-of-chocolate.jpg" id="modal_img">
+        </div>
+      </div>
+      <div class="modal" id="modalPedido">
+        <div class="modal-content">
+          <span onclick="hideModalPedido()">&times;</span>
+              <div class="justify-center">
+                <img src="assets/imagens/cute_chef_girl_in_uniform_character.jpg" alt="">
+              </div>
+              
+              <div class="justify-center">
+                <p>O seu pedido já foi encaminhado para   a nossa equipe</p>
+              </div>
+              <div>
+                <p>clique nesse <a href="https://docs.google.com/spreadsheets/d/1JNwtOTQwJQ6RGB1sCaFsWvMevU7s0IGvp2aWTndgEjs/edit?usp=sharing" target="_blank">Link</a> para ver nossos pedidos</p>
+              </div>
+                 
+        </div>
+      </div>
+    </header>
+    <main>
+    <section class="container-slide">
+      <div class="slide-container active">
+        <div class="slide">
+          <div class="content-slide">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content-slide">
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content-slide">
+            <!--<h3>Metaverso</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam unde doloremque mollitia magnam blanditiis ratione debitis? Quam, possimus nulla vero dignissimos, qui aut, nesciunt ullam at quis fugiat dolor officia!</p>
+            <a href="#" class="btn-slide">Saiba mais</a>-->
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content-slide">
+          </div>
+        </div>
+      </div>
+
+      <div id="prev" onclick="prev()">
+          <
+      </div>
+      <div id="next" onclick="next()">
+        >
+      </div>
+      
+    </section>
+    <section class="section-1" id="sobreNos">
+      <h1><span>SOBRE</span> NÓS</h1>
+      <div class="sobre-nos">
+              <img src="assets/imagens/cute_chef_girl_in_uniform_character.jpg" alt="">
+          <div class="sobre-nos-title">
+              <h2>O que faz nosso bolo especial ?</h2>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing Lore<br>elit. Dolore pariatur voluptate, laudantium similique dolores consectetur in quidem exercitationem quas adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing Lore
+              </p>
+              <button><a href="#formPedido">Peça agora</a> </button>
+          </div> 
+      </div>
+    </section>
+    <section class="mais_vendidos" id="favoritos">
+      <h1>OS NOSSOS PRODUTOS MAIS <span>VENDIDOS</span></h1>
+    <div class="container">
+        <div class="row">
+              <div class="card_img">
+                <div>
+                  <img src="assets/imagens/bolo-casamento.jpeg" class="small_img">
+                </div>
+                <h4>Bolos de casamento</h4>
+              </div>
+
+              <div class="card_img">
+                <div>
+                  <img src="assets/imagens/dessert-fruitcake.jpg" class="small_img">
+                </div>
+                <h4>Bolos pro café da tarde</h4>
+              </div>
+              <div class="card_img">
+                <div>
+                  <img src="assets/imagens/assortment-of-pieces-of-cake.jpg" class="small_img">
+                </div>
+                <h4>Pedaços de bolo</h4>
+              </div>
+        </div>
+        <div class="row">
+          <div class="card_img">
+              <div>
+                <img src="assets/imagens/stunning-birthday-cake.jpg" class="small_img">
+              </div>
+              <h4>Bolo de aniversário</h4>
+            </div>
+
+            <div class="card_img">
+              <div>
+                <img src="assets/imagens/bolo-de-beijinho.jpeg" class="small_img">
+              </div>
+              <h4>Bolo de beijinho</h4>
+            </div>
+            <div class="card_img">
+              <div>
+                <img src="assets/imagens/close-up-view-of-chocolate.jpg" class="small_img">
+              </div>
+              <h4>Bolo de chocolate</h4>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="catalogo" id="catalogo">
+      <div class="container">
+        <div>
+          <h1 class="heading">NOSSO <span>CATÁLOGO</span></h1>
+          <input type="text" id="search-box" placeholder="escreva aqui...">
+          <p class="nada"></p>
+        <div class="container-image">
+        <div class="image" data-title="morango">
+            <img src="assets/imagens/a-front-view-red-fruit-cake.jpg" alt="">
+            <h3>Bolo de morango</h3>
+        </div>
+
+          <div class="image" data-title="aniversario">
+            <img src="assets/imagens/birthday-cake-with-sprinkles.jpg" alt="">
+            <h3>Bolo de aniversário</h3>
+          </div>
+
+          <div class="image" data-title="chocolate">
+            <img src="assets/imagens/close-up-view-of-chocolate.jpg" alt="">
+            <h3>Bolo de chocolate</h3>
+          </div>
+
+          <div class="image" data-title="casamento">
+            <img src="assets/imagens/bolo-casamento.jpeg" alt="">
+            <h3>Bolo de casamento</h3>
+          </div>
+
+          <div class="image" data-title="casamento">
+            <img src="assets/imagens/bolo-lindo.jpg" alt="">
+            <h3>Bolo de casamento</h3>
+          </div>
+
+          <div class="image" data-title="chocolate">
+            <img src="assets/imagens/delicious-and-sweet-cake.jpg" alt="">
+            <h3>Bolo de chocolate</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-2" id="promocoes">
+      <h1>MENU DE<span> PROMOÇÕES</span></h1>
+      <div class="container-card-1">
+          <div class="card-img">
+              <img src="assets/imagens/bolo-kit- kat-brigadeiro -morango.webp" alt="menu">
+              <h3>Bolo Kit Kat</h3>
+              <p>R$ 5.50 <span>8.99</span></p> 
+              <button>Fazer Orçamento</button>
+          </div>
+
+          <div class="card-img">
+              <img src="assets/imagens/dessert-fruitcake.jpg" alt="menu">
+              <h3>Bolo vulcanico</h3>
+              <p>R$ 7.50 <span>7.99</span></p>
+              <button>Fazer Orçamento</button>
+          </div>
+
+          <div class="card-img">
+              <img src="assets/imagens/bolo-decorado-com-granulado-colorido.jpg" alt="menu">
+              <h3>Bolo granulado</h3>
+              <p>R$ 6.50 <span>12.99</span></p>
+              <button>Fazer Orçamento</button>
+          </div>
+        </div>
+        <div id="container-card-2">
+            <div class="card-img">
+                <img src="assets/imagens/front-view-of-delicious-chocolate-cake-concept.jpg" alt="menu">
+                <h3>Bolo de chocolate</h3>
+                <p>R$ 5.50 <span>8.99</span></p>
+                <button>Fazer Orçamento</button>
+            </div>
+
+            <div class="card-img">
+                <img src="assets/imagens/cream-pastry-sweet-white-tasty.jpg" alt="menu">
+                <h3>Bolo floresta negra</h3>
+                <p>R$ 7.50 <span>7.99</span></p>
+                <button>Fazer Orçamento</button>
+            </div>
+
+            <div class="card-img">
+                <img src="assets/imagens/a-front-view-red-fruit-cake.jpg" alt="menu">
+                <h3>Bolo de morango</h3>
+                <p>R$ 7.50 <span>7.99</span></p>
+                <button>Fazer Orçamento</button>
+            </div>
+            
+        </div>
+    </section>
+    <section class="section-3" id="formPedido">
+      <h1>FAÇA JÁ O SEU <span>ORÇAMENTO</span></h1>
+      <div class="fazer-pedido">
+        <div class="subscription-form">
+            <form class="pedido" id="resetForm">
+                <table>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="name">Nome</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="nomeForm" name="name" placeholder="Digite o seu nome" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="email">E-mail</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="email" id="emailForm" name="email" placeholder="Digite seu melhor e-mail" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="phone">Telefone</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="phone" id="telForm" name="phone" placeholder="Número de Whatsapp" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="phone">Sabor</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input list="sabor"  id="saborForm" placeholder="Selecione ou digite" required>
+                            <datalist id="sabor">
+                                <option value="prestigio">
+                                <option value="chocolate com avelã">
+                                <option value="morango">
+                                <option value="leite ninho">
+                                <option value="sem recheio">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="andar">Andares</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="number" id="andarForm" name="andar" min="1" max="10" placeholder="Quantos andares você deseja?" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="tema">Tema</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="temaForm" name="tame" placeholder="Tema do bolo" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="data">Data da entrega</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="date" id="dataForm" name="data" placeholder="Tema do bolo" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="hora">Hora da entrega</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="time" id="horaForm" name="hora" placeholder="Hora da entrega" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="cep">CEP</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="cepForm" name="cep" placeholder="Digite o seu CEP" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="rua">Rua</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="ruaForm" name="rua" placeholder="Digite a sua rua" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="cidade">Cidade</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="cidadeForm" name="cidade" placeholder="Digite a sua cidade" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="bairro">Bairro</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="bairroForm" name="bairro" placeholder="Digite o seu bairro" required>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="numeroCasa">Numero</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="numeroForm" name="numeroCasa" placeholder="Numero da sua casa" required>        
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td class="label-pedido">
+                            <label for="complemento">Complemento</label>
+                        </td>
+                        <td class="input-pedido">
+                            <input type="text" id="complementoForm" name="complemento" placeholder="Complemento da casa" required>            
+                        </td>
+                    </tr>
+                    
+                           
+                </table>
+                <input type="submit" class="btn" value="Pedir orçamento">
+                        
+            </form>
+        </div>
+    </div>
+    </section>
+    <section class="section-4" id="feedbacks">
+      <h1>ANÁLISE DOS <span>CLIENTES</span></h1>
+      <div class="container-clientes">
+          <div class="paragrafo">
+              <div class="info-img">
+                  <img src="assets/imagens/aspas.png" alt="ifo">
+              </div>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit. preferredEncodings Lorem Lorem
+              </p>
+              <img src="assets/imagens/pic-1.png" alt="pic1">
+              <h4>John Deo</h4>
+              <div class="stars">
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
+              </div>
+          </div>
+          <div class="paragrafo">
+              <div class="info-img">
+                  <img src="assets/imagens/aspas.png" alt="ifo">
+              </div>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit. preferredEncodings Lorem Lorem
+              </p>
+              <img src="assets/imagens/pic-2.png" alt="pic2">
+              <h4>Lucia Dias</h4>
+              <div class="stars">
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
+              </div>
+          </div>
+          <div class="paragrafo">
+              <div class="info-img">
+                  <img src="assets/imagens/aspas.png" alt="ifo">
+              </div>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit. preferredEncodings Lorem Lorem
+              </p>
+              <img src="assets/imagens/pic-3.png" alt="pic3">
+              <h4>Keel Gares</h4>
+              <div class="stars">
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
+              </div>
+          </div>
+      </div>
+    </section>
+    <br><br>
+    </main>
+    <footer>
+      <div class="main-content" id="footer">
+        <div class="left box">
+          <h2>Sobre nós</h2>
+          <hr>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias officiis error sunt fugit placeat quidem dolor sit aliquid minus mollitia nisi, incidunt eaque voluptatum dicta voluptatibus perferendis sint asperiores perspiciatis?
+            </p>
+            <div class="social">
+              <a href="#"><span class="fa fa-facebook" aria-hidden="true"></span>
+              </a>
+              <a href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+              <a href="#"><span class="fa fa-instagram" aria-hidden="true"></span></a>
+              <a href="#"><span class="fa fa-youtube-play" aria-hidden="true"></span></a>
+            </div>
+        </div>
+        </div>
+        <div class="center box">
+          <h2>Endereço</h2>
+          <hr>
+          <div class="content">
+            <div class="place">
+              <span class="fa fa-map-marker" aria-hidden="true"></span>
+              <span class="text">Av. Brasil, Nova Capital</span>
+            </div>
+            <div class="phone">
+              <span class="fa fa-phone" aria-hidden="true"></span>
+              <span class="text">+55 61 9999-9999</span>
+            </div>
+            <div class="email">
+              <span class="fa fa-envelope"></span>
+              <span class="text">exemplo@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="rigth box">
+          <h2>Contato</h2>
+          <hr>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Mensagem *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bottom">
+        <div class="center">
+          <span class="credit">Criado por <a href="#">Thainara</a></span>
+          <span class="fa fa-copyright">2022 Todos os direitos reservados</span>
+        </div>
+      </div>
+    </footer>
+</body>
+    <script src="assets/JavaScript/index.js"></script>
+    <script src="assets/JavaScript/login.js"></script>
+    <script src="assets/JavaScript/cadastro.js"></script>
+    <script src="assets/JavaScript/mais-vendidos.js"></script>
+    <script src="assets/JavaScript/pedido.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</html>
+
+

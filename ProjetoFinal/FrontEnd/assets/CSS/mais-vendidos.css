@@ -1,0 +1,106 @@
+.mais_vendidos .container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+
+.mais_vendidos .card_img{
+    width: 20rem;
+    overflow: hidden;
+    margin-left: 25px;
+    padding: 0.5rem;
+    border-radius: 5%;
+    border: 2px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.2);
+    margin-bottom: 2rem;
+}
+
+.mais_vendidos .small_img{
+    height: 100%;
+    cursor: pointer;
+    transition: all linear 0.4s;
+}
+
+.mais_vendidos .small_img:hover{
+    filter: grayscale(100%);
+}
+
+.mais_vendidos .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#modal_img{
+    width: 65vw;
+    transform: scale(0);
+    transition: all linear .3s;
+}
+
+.modal_active #modal_img{
+    transform: scale(1);
+}
+
+
+.modal_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#bt_close{
+    color:#fff;
+    background-color: #000;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 5px 10px;
+    font-size: 25px;
+    border:solid 1px #fff;
+    transition: all ease-out .4s;
+    cursor: pointer;
+}
+
+#bt_close:hover{
+    background-color: #f00;
+}
+
+.modal_active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.card_img img{
+    width: 18.75rem;
+    height: 15rem;
+    object-fit: fill;
+    border-radius: 5%;
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.2);
+}
+
+.card_img h4{
+    text-align: center;
+}
+
+.card_img div{
+    width: 20rem;
+    height: 15rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.mais_vendidos h1{
+    align-items: center;
+    text-align: center;
+    color: var(--preto);
+    font-size: 3rem;
+}
+
+.mais_vendidos  span{
+    color: var(--lilas);
+}
